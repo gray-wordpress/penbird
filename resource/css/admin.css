@@ -1,0 +1,574 @@
+/**
+ * PenBird admin dashboard.
+ * Reuses PenBird root colors and button components.
+ */
+
+.penbird-dashboard {
+	--penbird-primary: #605BE5;
+	--penbird-heading: #0A2540;
+	--penbird-text: #696969;
+	--penbird-form: #F6F9FC;
+	--penbird-light-bg: #f5f5f5;
+	--penbird-border: #E6E6E6;
+	--penbird-off-text: #ccc;
+	max-width: 1080px;
+	margin-top: 12px;
+	font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.penbird-dashboard__banner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	background: var(--penbird-heading);
+	color: #fff;
+	padding: 36px 40px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.penbird-dashboard__eyebrow {
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.7;
+	margin-bottom: 8px;
+	color: #fff;
+}
+
+.penbird-dashboard__banner h1 {
+	color: #fff;
+	margin: 0 0 10px;
+	font-size: 28px;
+	line-height: 1.3;
+	font-weight: 600;
+}
+
+.penbird-dashboard__banner p {
+	color: #fff;
+	opacity: 0.85;
+	max-width: 580px;
+	margin: 0 0 16px;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.penbird-dashboard__banner-meta {
+	display: flex;
+	gap: 16px;
+	font-size: 13px;
+	opacity: 0.75;
+	margin-bottom: 18px;
+}
+
+.penbird-dashboard__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.penbird-dashboard .penbird-btn-default {
+	background: var(--penbird-light-bg);
+	color: var(--penbird-heading);
+	font-weight: 500;
+	font-size: 14px;
+	padding: 10px 18px;
+	border-radius: 4px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	height: auto;
+	border: none;
+	line-height: 1.4;
+}
+
+.penbird-dashboard .penbird-btn-default:hover,
+.penbird-dashboard .penbird-btn-default:focus {
+	color: var(--penbird-heading);
+	opacity: 0.92;
+}
+
+.penbird-dashboard .penbird-btn-default__primary {
+	background: var(--penbird-primary);
+	color: #fff;
+}
+
+.penbird-dashboard .penbird-btn-default__primary:hover,
+.penbird-dashboard .penbird-btn-default__primary:focus {
+	color: #fff;
+	background: var(--penbird-primary);
+}
+
+.penbird-dashboard .penbird-btn-default__secondary {
+	background: transparent;
+	color: #fff;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.penbird-dashboard .penbird-btn-default__secondary:hover,
+.penbird-dashboard .penbird-btn-default__secondary:focus {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.penbird-dashboard__banner-mark {
+	width: 88px;
+	height: 88px;
+	border-radius: 16px;
+	background: var(--penbird-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.penbird-dashboard__banner-mark span {
+	color: #fff;
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.penbird-dashboard__tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 0 0 20px;
+	padding: 6px;
+	background: #fff;
+	border: 1px solid var(--penbird-border);
+	border-radius: 8px;
+}
+
+.penbird-dashboard__tab {
+	appearance: none;
+	border: none;
+	background: transparent;
+	color: var(--penbird-heading);
+	font-size: 13px;
+	font-weight: 600;
+	padding: 10px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	line-height: 1.3;
+}
+
+.penbird-dashboard__tab:hover,
+.penbird-dashboard__tab:focus {
+	background: var(--penbird-form);
+	color: var(--penbird-heading);
+	outline: none;
+}
+
+.penbird-dashboard__tab.is-active {
+	background: var(--penbird-primary);
+	color: #fff;
+}
+
+.penbird-dashboard__panel[hidden] {
+	display: none;
+}
+
+.penbird-dashboard__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.penbird-dashboard__card {
+	background: #fff;
+	border: 1px solid var(--penbird-border);
+	border-radius: 8px;
+	padding: 24px;
+}
+
+.penbird-dashboard__card--wide {
+	margin-top: 0;
+}
+
+.penbird-dashboard__card h2 {
+	margin: 0 0 8px;
+	color: var(--penbird-heading);
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.penbird-dashboard__card p {
+	color: var(--penbird-text);
+	margin: 0 0 16px;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.penbird-dashboard__checklist,
+.penbird-dashboard__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.penbird-dashboard__checklist li {
+	position: relative;
+	padding: 6px 0 6px 22px;
+	color: var(--penbird-heading);
+	font-size: 14px;
+}
+
+.penbird-dashboard__checklist li::before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	border-radius: 100%;
+	background: var(--penbird-primary);
+	position: absolute;
+	left: 0;
+	top: 12px;
+}
+
+.penbird-dashboard__list li {
+	margin: 0 0 10px;
+}
+
+.penbird-dashboard__list a,
+.penbird-dashboard__links a,
+.penbird-dashboard__steps a {
+	color: var(--penbird-primary);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.penbird-dashboard__list a:hover,
+.penbird-dashboard__links a:hover,
+.penbird-dashboard__steps a:hover {
+	color: var(--penbird-heading);
+}
+
+.penbird-dashboard__video-frame {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	border-radius: 8px;
+	overflow: hidden;
+	background: var(--penbird-heading);
+}
+
+.penbird-dashboard__video-frame iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.penbird-dashboard__video-fallback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	min-height: 220px;
+	border-radius: 8px;
+	background: var(--penbird-heading);
+	text-decoration: none;
+	color: #fff;
+}
+
+.penbird-dashboard__play {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: var(--penbird-primary);
+	position: relative;
+}
+
+.penbird-dashboard__play::after {
+	content: "";
+	position: absolute;
+	left: 22px;
+	top: 18px;
+	border-style: solid;
+	border-width: 10px 0 10px 16px;
+	border-color: transparent transparent transparent #fff;
+}
+
+.penbird-dashboard__video-label {
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.penbird-dashboard__steps {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: penbird-step;
+}
+
+.penbird-dashboard__steps li {
+	counter-increment: penbird-step;
+	margin: 0 0 12px;
+}
+
+.penbird-dashboard__steps a {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 14px 16px 14px 52px;
+	border: 1px solid var(--penbird-border);
+	border-radius: 8px;
+	background: var(--penbird-form);
+	position: relative;
+	color: var(--penbird-heading);
+}
+
+.penbird-dashboard__steps a::before {
+	content: counter(penbird-step);
+	position: absolute;
+	left: 14px;
+	top: 16px;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: var(--penbird-primary);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.penbird-dashboard__steps strong {
+	font-size: 14px;
+}
+
+.penbird-dashboard__steps span {
+	color: var(--penbird-text);
+	font-weight: 400;
+	font-size: 13px;
+}
+
+.penbird-dashboard__pro {
+	margin-bottom: 20px;
+}
+
+.penbird-dashboard__card--cta {
+	background: var(--penbird-heading);
+	border-color: var(--penbird-heading);
+	color: #fff;
+}
+
+.penbird-dashboard__card--cta h2,
+.penbird-dashboard__card--cta p,
+.penbird-dashboard__card--cta .penbird-dashboard__eyebrow {
+	color: #fff;
+}
+
+.penbird-dashboard__card--cta p {
+	opacity: 0.85;
+	max-width: 640px;
+}
+
+.penbird-dashboard__table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+}
+
+.penbird-dashboard__table th,
+.penbird-dashboard__table td {
+	text-align: left;
+	padding: 12px 14px;
+	border-bottom: 1px solid var(--penbird-border);
+	color: var(--penbird-heading);
+	font-size: 14px;
+}
+
+.penbird-dashboard__table th {
+	background: var(--penbird-form);
+	font-weight: 600;
+}
+
+.penbird-dashboard__yes {
+	color: var(--penbird-primary);
+	font-weight: 600;
+}
+
+.penbird-dashboard__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.penbird-dashboard__links a {
+	background: var(--penbird-form);
+	padding: 8px 14px;
+	border-radius: 4px;
+}
+
+@media screen and (max-width: 782px) {
+	.penbird-dashboard__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.penbird-dashboard__banner {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 24px;
+	}
+
+	.penbird-dashboard__tab {
+		flex: 1 1 auto;
+	}
+}
+
+/* Page settings metabox — same visual radios as Customizer. */
+.penbird-metabox {
+	--penbird-primary: #605BE5;
+	--penbird-heading: #0A2540;
+	--penbird-form: #F6F9FC;
+	--penbird-border: #E6E6E6;
+}
+
+.penbird-metabox__intro,
+.penbird-metabox__help {
+	margin: 0 0 12px;
+	color: #696969;
+	font-size: 13px;
+}
+
+.penbird-metabox__field {
+	border-top: 1px solid var(--penbird-border);
+	padding-top: 16px;
+	margin-top: 16px;
+}
+
+.penbird-metabox__field:first-of-type {
+	border-top: 0;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.penbird-metabox__label {
+	display: block;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--penbird-heading);
+	margin-bottom: 4px;
+}
+
+.penbird-metabox .penbird-visual-radio {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.penbird-metabox .penbird-visual-radio__option {
+	display: block;
+	margin: 0;
+	cursor: pointer;
+}
+
+.penbird-metabox .penbird-visual-radio__input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+.penbird-metabox .penbird-visual-radio__card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 6px 10px;
+	border: 1px solid var(--penbird-border);
+	border-radius: 6px;
+	background: #fff;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.penbird-metabox .penbird-visual-radio__icon {
+	display: block;
+	width: 100%;
+	line-height: 0;
+}
+
+.penbird-metabox .penbird-visual-radio__icon svg {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.penbird-metabox .penbird-visual-radio__text {
+	font-size: 11px;
+	line-height: 1.3;
+	text-align: center;
+	color: var(--penbird-heading);
+	font-weight: 600;
+}
+
+.penbird-metabox .penbird-visual-radio__option:hover .penbird-visual-radio__card {
+	border-color: var(--penbird-primary);
+	background: var(--penbird-form);
+}
+
+.penbird-metabox .penbird-visual-radio__input:focus + .penbird-visual-radio__card,
+.penbird-metabox .penbird-visual-radio__input:focus-visible + .penbird-visual-radio__card {
+	border-color: var(--penbird-primary);
+	box-shadow: 0 0 0 2px var(--penbird-primary);
+}
+
+.penbird-metabox .penbird-visual-radio__input:checked + .penbird-visual-radio__card {
+	border-color: var(--penbird-primary);
+	background: var(--penbird-form);
+	box-shadow: inset 0 0 0 1px var(--penbird-primary);
+}
+
+.penbird-metabox__check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 8px 0 0;
+	font-size: 13px;
+	color: var(--penbird-heading);
+	cursor: pointer;
+}
+
+.penbird-editor-sidebar {
+	padding: 0 0 16px;
+}
+
+.penbird-editor-sidebar .penbird-metabox__intro {
+	padding: 16px 16px 0;
+	margin-bottom: 0;
+}
+
+.penbird-editor-sidebar .penbird-metabox__field {
+	padding: 16px;
+	margin-top: 0;
+}
+
+.penbird-editor-sidebar .components-panel__body .penbird-metabox__help {
+	margin: 0 0 8px;
+}
+
+.penbird-editor-sidebar .components-toggle-control {
+	margin-top: 12px;
+}
+
+.penbird-page-sidebar .components-panel__body-title {
+	color: #0A2540;
+}
+
+.interface-pinned-items button[aria-label="PenBird"] svg,
+.editor-header__settings .interface-pinned-items svg {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
