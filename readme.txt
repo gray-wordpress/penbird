@@ -7,7 +7,7 @@ License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: grid-layout, blog, news, two-columns, three-columns, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
 
-PenBird is a blog theme with a masonry post grid, Customizer options, and WooCommerce styling.
+PenBird is a multipurpose WordPress theme with Customizer layouts, a masonry blog, and WooCommerce styling.
 
 == Description ==
 
